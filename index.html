@@ -29,34 +29,43 @@
             overflow: hidden;
         }
 
-        /* 首頁橫幅 */
+        /* --- SỬA LỖI ẢNH BÌA NỀN --- */
         .header-card {
             position: relative;
         }
 
         .cover-photo {
             height: 196px;
-            background-color: #a0b4b7;
-            background-image: linear-gradient(135deg, #a0b4b7 0%, #d3e1e1 100%);
+            /* Thay đổi URL dưới đây thành đường dẫn ảnh bìa của bạn */
+            background-image: url('images/cover.jpg'); 
+            background-size: cover; /* Đảm bảo ảnh phủ kín bạt */
+            background-position: center; /* Căn giữa ảnh */
+            background-repeat: no-repeat;
+            
+            /* Màu dự phòng nếu không tải được ảnh */
+            background-color: #a0b4b7; 
         }
 
+        /* --- SỬA LỖI ẢNH ĐẠI DIỆN --- */
         .profile-photo-container {
             position: absolute;
-            top: 110px;
+            top: 110px; /* Vị trí nhô lên */
             left: 24px;
+            z-index: 2; /* Đảm bảo nằm trên ảnh bìa */
         }
 
-        .profile-photo {
+        .profile-pic {
             width: 160px;
             height: 160px;
-            border-radius: 50%;
-            border: 4px solid #fff;
+            border-radius: 50%; /* Hình tròn */
+            border: 4px solid #fff; /* Viền trắng */
             box-shadow: 0 0 0 1px rgba(0,0,0,0.1);
-            object-fit: cover;
+            object-fit: cover; /* Đảm bảo ảnh không bị méo */
+            display: block; /* Sửa lỗi hiển thị lặp */
         }
 
         .header-info {
-            padding: 90px 24px 24px 24px;
+            padding: 90px 24px 24px 24px; /* Chừa chỗ cho ảnh tròn */
         }
 
         .header-info h1 {
@@ -72,7 +81,6 @@
             margin: 0 0 8px 0;
         }
 
-        /* Thêm style cho phần Quê quán & Đơn vị */
         .header-info p.personal-details {
             font-size: 14px;
             color: rgba(0,0,0,0.7);
@@ -100,7 +108,6 @@
             color: #0a66c2;
         }
 
-        /* 成就區塊樣式 */
         .achievement-item {
             display: flex;
             margin-bottom: 16px;
@@ -126,7 +133,6 @@
             margin: 4px 0 0 0;
         }
 
-        /* 經歷項目樣式 */
         .experience-item {
             margin-bottom: 20px;
             display: flex;
@@ -157,7 +163,6 @@
             margin: 2px 0;
         }
 
-        /* 技能與興趣清單樣式 */
         .tag-list {
             list-style: none;
             padding: 0;
@@ -190,6 +195,7 @@
 
         <div class="card header-card">
             <div class="cover-photo"></div> 
+            
             <div class="profile-photo-container">
                 <img src="images/12.jpeg" alt="Nhug" class="profile-pic">
             </div>
@@ -199,7 +205,7 @@
                 <p class="headline">專業職稱 | 數位內容創作 | 影像處理 | 跨文化溝通</p>
                 
                 <p class="personal-details">
-                    <span>🏠 <strong> quê quán (祖籍):</strong> [Tỉnh Tuyên Quang , Việt Nam]</span>
+                    <span>🏠 <strong> quê quán (祖籍):</strong> Tuyên Quang, Việt Nam</span>
                     <span>🏢 <strong> đơn vị công tác (現職單位):</strong> [bí mật]</span>
                 </p>
 
@@ -210,7 +216,7 @@
         <div class="card content-card">
             <h2>關於我 (About Me)</h2>
             <p>
-                我是管氏紅絨，來自 [Quê quán của bạn]，目前在 [Đơn vị công tác] 擔任 [Chức vụ]. 我擁有多年在數位領域的實務經驗。我熱衷於將創意與技術結合，擅長透過細膩的影像處理與多語溝通能力，為團隊解決複雜問題並創造價值。
+                我是管氏紅絨，來自 Tuyên Quang, Việt Nam，目前在 [Đơn vị công tác] 擔任 [Chức vụ]. 我擁有多年在數位領域的實務經驗。我熱衷於將創意與技術結合，擅長透過細膩的影像處理與多語溝通能力，為團隊解決複雜問題並創造價值。
             </p>
         </div>
 
@@ -270,9 +276,9 @@
             <ul class="tag-list interest-tags">
                 <li>🎬 電影特效製作</li>
                 <li>📸 攝影與旅行</li>
-                <li>🌍 多國語言學習</li>
-                <li>💻 網頁技術開發</li>
-                <li>🎨 數位繪畫創作</li>
+                <li>🌍 語言學習</li>
+                <li>💻 網頁技術</li>
+                <li>🎨 數位創作</li>
             </ul>
         </div>
 
