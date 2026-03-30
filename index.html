@@ -29,6 +29,7 @@
             overflow: hidden;
         }
 
+        /* 首頁橫幅 */
         .header-card {
             position: relative;
         }
@@ -85,15 +86,38 @@
             font-size: 20px;
             font-weight: 600;
             margin-top: 0;
+            margin-bottom: 20px;
+            color: #0a66c2; /* LinkedIn 藍色 */
+        }
+
+        /* 成就區塊樣式 */
+        .achievement-item {
+            display: flex;
             margin-bottom: 16px;
+            align-items: flex-start;
         }
 
-        .content-card p {
-            margin: 0 0 16px 0;
+        .achievement-icon {
+            font-size: 24px;
+            margin-right: 15px;
+            min-width: 30px;
+            text-align: center;
+        }
+
+        .achievement-text h3 {
+            font-size: 16px;
+            font-weight: 600;
+            margin: 0;
+        }
+
+        .achievement-text p {
             font-size: 14px;
+            color: rgba(0,0,0,0.6);
+            margin: 4px 0 0 0;
         }
 
-        .experience-item, .education-item {
+        /* 經歷與學歷項目樣式 */
+        .experience-item {
             margin-bottom: 20px;
             display: flex;
             align-items: flex-start;
@@ -118,35 +142,36 @@
             margin: 0;
         }
 
-        .item-details p.subtitle {
+        .item-details p.subtitle, .item-details p.dates-location {
             font-size: 14px;
-            color: rgba(0,0,0,0.9);
             margin: 2px 0;
         }
 
-        .item-details p.dates-location {
-            font-size: 14px;
-            color: rgba(0,0,0,0.6);
-            margin: 0;
-        }
-        
-        .skills-list {
+        /* 技能與興趣清單樣式 */
+        .tag-list {
             list-style: none;
             padding: 0;
             margin: 0;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
         }
 
-        .skills-list li {
-            display: inline-block;
+        .tag-list li {
             background-color: #fff;
             border: 1px solid rgba(0,0,0,0.6);
             color: rgba(0,0,0,0.7);
             padding: 6px 12px;
             border-radius: 16px;
-            margin-right: 8px;
-            margin-bottom: 8px;
             font-size: 14px;
             font-weight: 600;
+        }
+
+        /* 興趣區塊特別樣式 */
+        .interest-tags li {
+            border-color: #0a66c2;
+            color: #0a66c2;
+            background-color: #f0f7ff;
         }
     </style>
 </head>
@@ -162,26 +187,81 @@
 
             <div class="header-info">
                 <h1>Nhug</h1>
-                <p class="headline">專業職稱 | 專長領域 1 | 專長領域 2</p>
-                <p class="location-connections">居住城市, 台灣 · [聯繫方式]</p>
+                <p class="headline">專業職稱 | 數位內容創作 | 影像處理 | 跨文化溝通</p>
+                <p class="location-connections">居住城市, 台灣 · [聯繫方式/Email]</p>
             </div>
         </div>
 
         <div class="card content-card">
-            <h2>關於我</h2>
+            <h2>關於我 (About Me)</h2>
             <p>
-                我是管氏紅絨，在 [專業領域] 擁有多年的經驗。我熱衷於解決複雜的 [問題類型]，並持續追求專業成長。
-            </p>
-            <p>
-                我擅長 [核心技能 1] 與 [核心技能 2]，致力於為團隊帶來價值。
+                我是管氏紅絨，擁有多年在數位領域的實務經驗。我熱衷於將創意與技術結合，擅長透過細膩的影像處理與多語溝通能力，為團隊解決複雜問題並創造價值。
             </p>
         </div>
 
         <div class="card content-card">
-            <h2>工作經歷</h2>
+            <h2>重要成就 (Accomplishments)</h2>
+            
+            <div class="achievement-item">
+                <div class="achievement-icon">🏆</div>
+                <div class="achievement-text">
+                    <h3>年度優秀專案獎項</h3>
+                    <p>在 [年份] 成功執行 [專案名稱]，達成 [具體成果/如提升效率20%]。</p>
+                </div>
+            </div>
+
+            <div class="achievement-item">
+                <div class="achievement-icon">📜</div>
+                <div class="achievement-text">
+                    <h3>專業技術認證</h3>
+                    <p>取得 [證照名稱，如 Google 數位行銷或 Adobe 專業證照]。</p>
+                </div>
+            </div>
+
+            <div class="achievement-item">
+                <div class="achievement-icon">🚀</div>
+                <div class="achievement-text">
+                    <h3>個人技術突破</h3>
+                    <p>成功運用 AI 與 VFX 技術優化影像處理流程，減少 30% 的製作時間。</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="card content-card">
+            <h2>工作經歷 (Experience)</h2>
             <div class="experience-item">
                 <div class="item-logo">企</div> 
                 <div class="item-details">
-                    <h3>[職稱]</h3>
-                    <p class="subtitle">[公司名稱]</p>
-                    <p class="dates-location">[期間
+                    <h3>[目前職稱]</h3>
+                    <p class="subtitle">[目前公司名稱]</p>
+                    <p class="dates-location">[開始日期] – [至今]</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="card content-card">
+            <h2>專業技能 (Skills)</h2>
+            <ul class="tag-list">
+                <li>影像合成 (VFX)</li>
+                <li>數位影像處理</li>
+                <li>HTML / CSS</li>
+                <li>跨語言翻譯 (越/中/英)</li>
+                <li>AI 工具應用</li>
+            </ul>
+        </div>
+
+        <div class="card content-card">
+            <h2>個人興趣 (Interests)</h2>
+            <ul class="tag-list interest-tags">
+                <li>🎬 電影特效製作</li>
+                <li>📸 攝影與旅行</li>
+                <li>🌍 多國語言學習</li>
+                <li>💻 網頁技術開發</li>
+                <li>🎨 數位繪畫創作</li>
+            </ul>
+        </div>
+
+    </div>
+
+</body>
+</html>
