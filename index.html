@@ -72,10 +72,20 @@
             margin: 0 0 8px 0;
         }
 
+        /* Thêm style cho phần Quê quán & Đơn vị */
+        .header-info p.personal-details {
+            font-size: 14px;
+            color: rgba(0,0,0,0.7);
+            margin: 4px 0;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
         .header-info p.location-connections {
             font-size: 14px;
             color: rgba(0,0,0,0.6);
-            margin: 0;
+            margin-top: 8px;
         }
 
         .content-card {
@@ -87,7 +97,7 @@
             font-weight: 600;
             margin-top: 0;
             margin-bottom: 20px;
-            color: #0a66c2; /* LinkedIn 藍色 */
+            color: #0a66c2;
         }
 
         /* 成就區塊樣式 */
@@ -116,7 +126,7 @@
             margin: 4px 0 0 0;
         }
 
-        /* 經歷與學歷項目樣式 */
+        /* 經歷項目樣式 */
         .experience-item {
             margin-bottom: 20px;
             display: flex;
@@ -167,7 +177,6 @@
             font-weight: 600;
         }
 
-        /* 興趣區塊特別樣式 */
         .interest-tags li {
             border-color: #0a66c2;
             color: #0a66c2;
@@ -188,14 +197,20 @@
             <div class="header-info">
                 <h1>Nhug</h1>
                 <p class="headline">專業職稱 | 數位內容創作 | 影像處理 | 跨文化溝通</p>
-                <p class="location-connections">居住城市, 台灣 · [聯繫方式/Email]</p>
+                
+                <p class="personal-details">
+                    <span>🏠 <strong> quê quán (祖籍):</strong> [Tỉnh/Thành phố, Việt Nam]</span>
+                    <span>🏢 <strong> đơn vị công tác (現職單位):</strong> [Tên công ty/Cơ quan của bạn]</span>
+                </p>
+
+                <p class="location-connections">📍 居住城市: 台灣 · 📧 [聯繫方式/Email]</p>
             </div>
         </div>
 
         <div class="card content-card">
             <h2>關於我 (About Me)</h2>
             <p>
-                我是管氏紅絨，擁有多年在數位領域的實務經驗。我熱衷於將創意與技術結合，擅長透過細膩的影像處理與多語溝通能力，為團隊解決複雜問題並創造價值。
+                我是管氏紅絨，來自 [Quê quán của bạn]，目前在 [Đơn vị công tác] 擔任 [Chức vụ]. 我擁有多年在數位領域的實務經驗。我熱衷於將創意與技術結合，擅長透過細膩的影像處理與多語溝通能力，為團隊解決複雜問題並創造價值。
             </p>
         </div>
 
@@ -206,7 +221,7 @@
                 <div class="achievement-icon">🏆</div>
                 <div class="achievement-text">
                     <h3>年度優秀專案獎項</h3>
-                    <p>在 [年份] 成功執行 [專案名稱]，達成 [具體成果/如提升效率20%]。</p>
+                    <p>在 [年份] 於 [Đơn vị công tác] 成功執行 [專案名稱]，達成提升效率 20% 的成果。</p>
                 </div>
             </div>
 
@@ -233,7 +248,7 @@
                 <div class="item-logo">企</div> 
                 <div class="item-details">
                     <h3>[目前職稱]</h3>
-                    <p class="subtitle">[目前公司名稱]</p>
+                    <p class="subtitle"><strong>[Đơn vị công tác / Tên công ty]</strong></p>
                     <p class="dates-location">[開始日期] – [至今]</p>
                 </div>
             </div>
