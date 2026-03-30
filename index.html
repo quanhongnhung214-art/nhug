@@ -3,26 +3,24 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>你的姓名 - 專業個人履歷</title>
+    <title>Nhug - 專業個人履歷</title>
     <style>
         /* 基礎樣式 - 模擬 LinkedIn 的簡潔感 */
         body {
             font-family: -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", "Fira Sans", AppleColorEmoji, "Segoe UI Emoji", "Segoe UI Symbol", "Noto Sans CJK TC", sans-serif;
             margin: 0;
             padding: 0;
-            background-color: #f3f2ef; /* LinkedIn 的背景色 */
+            background-color: #f3f2ef;
             color: rgba(0,0,0,0.9);
             line-height: 1.5;
         }
 
-        /* 網頁容器 */
         .container {
             max-width: 1128px;
             margin: 0 auto;
             padding: 20px 0;
         }
 
-        /* 卡片樣式 */
         .card {
             background-color: #fff;
             border-radius: 8px;
@@ -38,28 +36,27 @@
 
         .cover-photo {
             height: 196px;
-            background-color: #a0b4b7; /* 預設橫幅顏色，可替換為圖片 */
+            background-color: #a0b4b7;
             background-image: linear-gradient(135deg, #a0b4b7 0%, #d3e1e1 100%);
         }
 
         .profile-photo-container {
             position: absolute;
-            top: 110px; /* 調整照片位置 */
+            top: 110px;
             left: 24px;
         }
 
-        /* */
         .profile-photo {
             width: 160px;
             height: 160px;
-            border-radius: 50%; /* 圓形 */
+            border-radius: 50%;
             border: 4px solid #fff;
             box-shadow: 0 0 0 1px rgba(0,0,0,0.1);
-            object-fit: cover; /* 確保圖片不變形地填充 */
+            object-fit: cover;
         }
 
         .header-info {
-            padding: 90px 24px 24px 24px; /* 為圓形照片留出空間 */
+            padding: 90px 24px 24px 24px;
         }
 
         .header-info h1 {
@@ -75,13 +72,22 @@
             margin: 0 0 8px 0;
         }
 
+        /* Thêm style cho phần Quê quán & Đơn vị */
+        .header-info p.personal-details {
+            font-size: 14px;
+            color: rgba(0,0,0,0.7);
+            margin: 4px 0;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
         .header-info p.location-connections {
             font-size: 14px;
             color: rgba(0,0,0,0.6);
-            margin: 0;
+            margin-top: 8px;
         }
 
-        /* 內容區塊 */
         .content-card {
             padding: 24px;
         }
@@ -90,16 +96,38 @@
             font-size: 20px;
             font-weight: 600;
             margin-top: 0;
+            margin-bottom: 20px;
+            color: #0a66c2;
+        }
+
+        /* 成就區塊樣式 */
+        .achievement-item {
+            display: flex;
             margin-bottom: 16px;
+            align-items: flex-start;
         }
 
-        .content-card p {
-            margin: 0 0 16px 0;
+        .achievement-icon {
+            font-size: 24px;
+            margin-right: 15px;
+            min-width: 30px;
+            text-align: center;
+        }
+
+        .achievement-text h3 {
+            font-size: 16px;
+            font-weight: 600;
+            margin: 0;
+        }
+
+        .achievement-text p {
             font-size: 14px;
+            color: rgba(0,0,0,0.6);
+            margin: 4px 0 0 0;
         }
 
-        /* 經歷與學歷項目樣式 */
-        .experience-item, .education-item {
+        /* 經歷項目樣式 */
+        .experience-item {
             margin-bottom: 20px;
             display: flex;
             align-items: flex-start;
@@ -115,7 +143,7 @@
             justify-content: center;
             font-weight: bold;
             color: #aaa;
-            border-radius: 4px; /* 公司的 logo 通常是方形 */
+            border-radius: 4px;
         }
 
         .item-details h3 {
@@ -124,36 +152,35 @@
             margin: 0;
         }
 
-        .item-details p.subtitle {
+        .item-details p.subtitle, .item-details p.dates-location {
             font-size: 14px;
-            color: rgba(0,0,0,0.9);
             margin: 2px 0;
         }
 
-        .item-details p.dates-location {
-            font-size: 14px;
-            color: rgba(0,0,0,0.6);
-            margin: 0;
-        }
-        
-        /* 技能區塊樣式 */
-        .skills-list {
+        /* 技能與興趣清單樣式 */
+        .tag-list {
             list-style: none;
             padding: 0;
             margin: 0;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
         }
 
-        .skills-list li {
-            display: inline-block;
+        .tag-list li {
             background-color: #fff;
             border: 1px solid rgba(0,0,0,0.6);
             color: rgba(0,0,0,0.7);
             padding: 6px 12px;
             border-radius: 16px;
-            margin-right: 8px;
-            margin-bottom: 8px;
             font-size: 14px;
             font-weight: 600;
+        }
+
+        .interest-tags li {
+            border-color: #0a66c2;
+            color: #0a66c2;
+            background-color: #f0f7ff;
         }
     </style>
 </head>
@@ -162,72 +189,90 @@
     <div class="container">
 
         <div class="card header-card">
-            <div class="cover-photo"></div> <div class="profile-photo-container">
-                <img src="你的照片路徑.jpg" alt="你的姓名" class="profile-photo">
+            <div class="cover-photo"></div> 
+            <div class="profile-photo-container">
+                <img src="profile.jpg" alt="Nhug" class="profile-photo">
             </div>
 
             <div class="header-info">
-                <h1>你的姓名</h1>
-                <p class="headline">你的專業職稱 | 專長領域 1 | 專長領域 2</p>
-                <p class="location-connections">你的居住城市, 台灣 · [你的聯繫方式，如 Email 或 LinkedIn 連結]</p>
+                <h1>Nhug</h1>
+                <p class="headline">專業職稱 | 數位內容創作 | 影像處理 | 跨文化溝通</p>
+                
+                <p class="personal-details">
+                    <span>🏠 <strong> quê quán (祖籍):</strong> [Tỉnh Tuyên Quang , Việt Nam]</span>
+                    <span>🏢 <strong> đơn vị công tác (現職單位):</strong> [bí mật]</span>
+                </p>
+
+                <p class="location-connections">📍 居住城市: 台灣 · 📧 [聯繫方式/Email]</p>
             </div>
         </div>
 
         <div class="card content-card">
-            <h2>關於我</h2>
+            <h2>關於我 (About Me)</h2>
             <p>
-                我在 [專業領域] 擁有多年的經驗。我熱衷於 [核心技能 1]、[核心技能 2] 並且擅長解決複雜的 [問題類型]。
-            </p>
-            <p>
-                我的背景結合了 [過去的相關經驗或學歷]，讓我能夠以獨特的視角 [達成特定結果]。目前，我致力於 [當前專案或目標]，並持續尋求與其他專業人士合作的機會。
+                我是管氏紅絨，來自 [Quê quán của bạn]，目前在 [Đơn vị công tác] 擔任 [Chức vụ]. 我擁有多年在數位領域的實務經驗。我熱衷於將創意與技術結合，擅長透過細膩的影像處理與多語溝通能力，為團隊解決複雜問題並創造價值。
             </p>
         </div>
 
         <div class="card content-card">
-            <h2>工作經歷</h2>
-
-            <div class="experience-item">
-                <div class="item-logo">企</div> <div class="item-details">
-                    <h3>職稱</h3>
-                    <p class="subtitle">[公司名稱]</p>
-                    <p class="dates-location">[開始月份, 年份] - [結束月份, 年份] · [任職時長]</p>
-                    <p class="dates-location">[城市, 台灣]</p>
-                    </div>
+            <h2>重要成就 (Accomplishments)</h2>
+            
+            <div class="achievement-item">
+                <div class="achievement-icon">🏆</div>
+                <div class="achievement-text">
+                    <h3>年度優秀專案獎項</h3>
+                    <p>在 [年份] 於 [Đơn vị công tác] 成功執行 [專案名稱]，達成提升效率 20% 的成果。</p>
+                </div>
             </div>
 
+            <div class="achievement-item">
+                <div class="achievement-icon">📜</div>
+                <div class="achievement-text">
+                    <h3>專業技術認證</h3>
+                    <p>取得 [證照名稱，如 Google 數位行銷或 Adobe 專業證照]。</p>
+                </div>
+            </div>
+
+            <div class="achievement-item">
+                <div class="achievement-icon">🚀</div>
+                <div class="achievement-text">
+                    <h3>個人技術突破</h3>
+                    <p>成功運用 AI 與 VFX 技術優化影像處理流程，減少 30% 的製作時間。</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="card content-card">
+            <h2>工作經歷 (Experience)</h2>
             <div class="experience-item">
-                <div class="item-logo">企</div>
+                <div class="item-logo">企</div> 
                 <div class="item-details">
-                    <h3>前職稱</h3>
-                    <p class="subtitle">[前公司名稱]</p>
-                    <p class="dates-location">[開始月份, 年份] - [結束月份, 年份] · [任職時長]</p>
-                    <p class="dates-location">[城市, 台灣]</p>
-                </div>
-            </div>
-
-        </div>
-
-        <div class="card content-card">
-            <h2>學歷</h2>
-
-            <div class="education-item">
-                <div class="item-logo">學</div> <div class="item-details">
-                    <h3>[你的學校]</h3>
-                    <p class="subtitle">[學位名稱]</p>
-                    <p class="dates-location">[開始年份] - [結束年份]</p>
+                    <h3>[目前職稱]</h3>
+                    <p class="subtitle"><strong>[Đơn vị công tác / Tên công ty]</strong></p>
+                    <p class="dates-location">[開始日期] – [至今]</p>
                 </div>
             </div>
         </div>
 
         <div class="card content-card">
-            <h2>專業技能</h2>
-            <ul class="skills-list">
-                <li>[技能 1]</li>
-                <li>[技能 2]</li>
-                <li>[技能 3]</li>
-                <li>[技能 4]</li>
-                <li>[技能 5]</li>
-                <li>[技能 6]</li>
+            <h2>專業技能 (Skills)</h2>
+            <ul class="tag-list">
+                <li>影像合成 (VFX)</li>
+                <li>數位影像處理</li>
+                <li>HTML / CSS</li>
+                <li>跨語言翻譯 (越/中/英)</li>
+                <li>AI 工具應用</li>
+            </ul>
+        </div>
+
+        <div class="card content-card">
+            <h2>個人興趣 (Interests)</h2>
+            <ul class="tag-list interest-tags">
+                <li>🎬 電影特效製作</li>
+                <li>📸 攝影與旅行</li>
+                <li>🌍 多國語言學習</li>
+                <li>💻 網頁技術開發</li>
+                <li>🎨 數位繪畫創作</li>
             </ul>
         </div>
 
