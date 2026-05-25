@@ -1,276 +1,380 @@
 <!DOCTYPE html>
-<html lang="zh-TW">
+<html lang="vi">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>越南傳統服飾典藏專家 | LinkedIn 風格專業履歷</title>
-    <style>
-        /* LinkedIn 經典配色與字體 */
-        :root {
-            --bg-color: #f3f2ef;
-            --card-bg: #ffffff;
-            --text-main: #191919;
-            --text-sub: #666666;
-            --link-color: #0a66c2;
-            --border-color: #e0e0e0;
-        }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Kho Tàng Văn Hóa 54 Dân Tộc Việt Nam</title>
 
-        body {
-            font-family: -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", "Noto Sans TC", sans-serif;
-            background-color: var(--bg-color);
-            color: var(--text-main);
-            margin: 0;
-            padding: 0;
-            line-height: 1.5;
-        }
+<style>
+:root{
+    --linkedin-blue:#0a66c2;
+    --bg-gray:#f3f2ef;
+    --text-main:rgba(0,0,0,0.9);
+    --text-sub:rgba(0,0,0,0.6);
+    --border-light:#e0e0e0;
+}
 
-        .container {
-            max-width: 850px;
-            margin: 20px auto;
-            padding: 0 10px;
-        }
+body{
+    font-family:-apple-system,system-ui,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;
+    background:var(--bg-gray);
+    margin:0;
+    color:var(--text-main);
+}
 
-        /* 卡片通用樣式 */
-        .card {
-            background: var(--card-bg);
-            border: 1px solid var(--border-color);
-            border-radius: 8px;
-            margin-bottom: 20px;
-            overflow: hidden;
-            padding: 24px;
-            position: relative;
-        }
+/* HEADER */
+header{
+    background:#fff;
+    padding:10px 0;
+    border-bottom:1px solid var(--border-light);
+    position:sticky;
+    top:0;
+    z-index:100;
+}
 
-        /* 頂部個人檔案卡片專用 */
-        .profile-card {
-            padding: 0 0 24px 0;
-        }
+.container{
+    max-width:1128px;
+    margin:auto;
+    padding:0 12px;
+}
 
-        .banner {
-            height: 200px;
-            background: linear-gradient(135deg, #0a66c2 0%, #004182 100%);
-            position: relative;
-        }
+.logo{
+    font-size:22px;
+    font-weight:bold;
+    color:var(--linkedin-blue);
+}
 
-        /* 裝飾用的越南傳統圖騰感線條 */
-        .banner::after {
-            content: "";
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 100%;
-            height: 4px;
-            background: #d4af37; /* 金色點綴 */
-        }
+/* PROFILE */
+.profile-card{
+    background:#fff;
+    border-radius:12px;
+    overflow:hidden;
+    margin-top:20px;
+    border:1px solid var(--border-light);
+}
 
-        .avatar-container {
-            padding: 0 24px;
-            margin-top: -75px;
-            position: relative;
-            z-index: 2;
-        }
+.cover-photo{
+    height:240px;
+    background:
+    linear-gradient(rgba(0,0,0,0.3),rgba(0,0,0,0.3)),
+    url('https://images.unsplash.com/photo-1528127269322-539801943592?auto=format&fit=crop&w=1400&q=80');
+    background-size:cover;
+    background-position:center;
+}
 
-        .avatar {
-            width: 150px;
-            height: 150px;
-            border-radius: 50%;
-            border: 4px solid var(--card-bg);
-            object-fit: cover;
-            background-color: #ccc;
-        }
+.profile-info{
+    position:relative;
+    padding:0 24px 30px;
+}
 
-        .profile-info {
-            padding: 12px 24px 0 24px;
-        }
+.profile-pic{
+    width:160px;
+    height:160px;
+    border-radius:50%;
+    border:5px solid white;
+    position:absolute;
+    top:-90px;
+    object-fit:cover;
+}
 
-        .profile-info h1 {
-            font-size: 24px;
-            margin: 0 0 4px 0;
-            font-weight: 600;
-        }
+.intro{
+    margin-top:90px;
+}
 
-        .profile-info .headline {
-            font-size: 16px;
-            color: var(--text-main);
-            margin: 0 0 8px 0;
-        }
+.intro h1{
+    margin:0;
+    font-size:30px;
+}
 
-        .profile-info .location {
-            font-size: 14px;
-            color: var(--text-sub);
-            margin: 0 0 12px 0;
-        }
+.intro p{
+    margin:6px 0;
+    color:var(--text-sub);
+}
 
-        .profile-info .contact-btn {
-            display: inline-block;
-            background-color: var(--link-color);
-            color: white;
-            padding: 6px 16px;
-            border-radius: 50px;
-            font-weight: 600;
-            text-decoration: none;
-            font-size: 16px;
-            transition: background 0.2s;
-        }
+.follow-btn{
+    margin-top:16px;
+    display:inline-block;
+    background:var(--linkedin-blue);
+    color:white;
+    padding:10px 22px;
+    border-radius:30px;
+    text-decoration:none;
+    font-weight:600;
+}
 
-        .profile-info .contact-btn:hover {
-            background-color: #004182;
-        }
+/* SECTIONS */
+.section-card{
+    background:#fff;
+    border-radius:12px;
+    border:1px solid var(--border-light);
+    padding:24px;
+    margin-top:16px;
+}
 
-        /* 區塊標題 */
-        .card h2 {
-            font-size: 20px;
-            margin-top: 0;
-            margin-bottom: 16px;
-            color: var(--text-main);
-            border-bottom: 1px solid var(--border-color);
-            padding-bottom: 8px;
-        }
+.section-title{
+    font-size:24px;
+    margin-bottom:20px;
+}
 
-        /* 典藏列表 / 經歷樣式 */
-        .item-list {
-            list-style: none;
-            padding: 0;
-            margin: 0;
-        }
+/* ETHNIC ITEMS */
+.ethnic-item{
+    display:flex;
+    gap:18px;
+    padding:18px 0;
+    border-bottom:1px solid var(--border-light);
+}
 
-        .item {
-            display: flex;
-            margin-bottom: 20px;
-            border-bottom: 1px solid #f0f0f0;
-            padding-bottom: 16px;
-        }
+.ethnic-item:last-child{
+    border-bottom:none;
+}
 
-        .item:last-child {
-            margin-bottom: 0;
-            border-bottom: none;
-            padding-bottom: 0;
-        }
+.ethnic-img{
+    width:110px;
+    height:110px;
+    object-fit:cover;
+    border-radius:8px;
+}
 
-        .item-icon {
-            font-size: 32px;
-            margin-right: 16px;
-            min-width: 48px;
-            text-align: center;
-        }
+.ethnic-details h3{
+    margin:0;
+    color:var(--linkedin-blue);
+    font-size:20px;
+}
 
-        .item-details h3 {
-            font-size: 16px;
-            margin: 0 0 4px 0;
-            color: var(--text-main);
-        }
+.ethnic-details h4{
+    margin:6px 0;
+    font-size:15px;
+    font-weight:500;
+}
 
-        .item-details .sub-title {
-            font-size: 14px;
-            color: var(--text-sub);
-            margin: 0 0 4px 0;
-        }
+.ethnic-details p{
+    color:var(--text-sub);
+    line-height:1.6;
+    font-size:15px;
+}
 
-        .item-details .date {
-            font-size: 12px;
-            color: var(--text-sub);
-            margin: 0 0 8px 0;
-        }
+.tag{
+    display:inline-block;
+    margin-top:8px;
+    margin-right:8px;
+    padding:5px 12px;
+    background:#e7f3ff;
+    color:var(--linkedin-blue);
+    border-radius:20px;
+    font-size:12px;
+    font-weight:bold;
+}
 
-        .item-details p {
-            font-size: 14px;
-            margin: 0;
-            color: var(--text-main);
-        }
+/* FOOTER */
+footer{
+    margin-top:40px;
+    background:#fff;
+    padding:30px 0;
+    border-top:1px solid var(--border-light);
+    text-align:center;
+    color:var(--text-sub);
+}
 
-        /* 技能/標籤樣式 */
-        .skills-container {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 8px;
-        }
+@media(max-width:768px){
 
-        .skill-tag {
-            background-color: rgba(0,0,0,0.06);
-            color: var(--text-sub);
-            padding: 6px 12px;
-            border-radius: 16px;
-            font-size: 14px;
-            font-weight: 600;
-        }
-    </style>
+    .ethnic-item{
+        flex-direction:column;
+    }
+
+    .ethnic-img{
+        width:100%;
+        height:220px;
+    }
+
+    .profile-pic{
+        width:120px;
+        height:120px;
+        top:-60px;
+    }
+
+    .intro{
+        margin-top:70px;
+    }
+}
+</style>
 </head>
+
 <body>
 
+<header>
     <div class="container">
+        <div class="logo">Ethnology Connect</div>
+    </div>
+</header>
 
-        <div class="card profile-card">
-            <div class="banner"></div>
-            
-            <div class="avatar-container">
-                <img src="image/1212.jpg" alt="越南傳統的民族服飾" class="avatar">
+<div class="container">
+
+    <!-- PROFILE -->
+    <div class="profile-card">
+
+        <div class="cover-photo"></div>
+
+        <div class="profile-info">
+
+            <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=500&q=80"
+            class="profile-pic">
+
+            <div class="intro">
+                <h1>Kho Tàng Văn Hóa 54 Dân Tộc Việt Nam</h1>
+
+                <p>Nghiên cứu chuyên sâu về trang phục truyền thống, nghệ thuật dệt thủ công và bản sắc văn hóa dân tộc.</p>
+
+                <p>📍 Hà Nội · Tây Bắc · Tây Nguyên · Đồng bằng sông Cửu Long</p>
+
+                <a href="#" class="follow-btn">Khám phá văn hóa</a>
             </div>
-            
-            <div class="profile-info">
-                <h1>[越南傳統的民族服飾 / 典藏單位名稱]</h1>
-                <div class="headline">越南傳統服飾研究員 / 數位典藏策展人 (Vietnamese Traditional Costume Curator)</div>
-                <div class="location">台灣，台北市 | 紡織文化織品保護領域</div>
-                <a href="mailto:your_email@example.com" class="contact-btn">聯絡我</a>
+
+        </div>
+    </div>
+
+    <!-- ABOUT -->
+    <div class="section-card">
+
+        <h2 class="section-title">Giới thiệu dự án</h2>
+
+        <p style="line-height:1.8; color:var(--text-sub);">
+            Việt Nam là quốc gia đa dân tộc với 54 cộng đồng anh em cùng sinh sống,
+            mỗi dân tộc mang một hệ thống trang phục, hoa văn và kỹ thuật thủ công
+            đặc trưng riêng biệt. Dự án này được xây dựng nhằm số hóa và lưu trữ các
+            giá trị văn hóa truyền thống, đồng thời quảng bá vẻ đẹp của nghệ thuật
+            dân gian Việt Nam ra thế giới.
+        </p>
+
+    </div>
+
+    <!-- ETHNIC COSTUMES -->
+    <div class="section-card">
+
+        <h2 class="section-title">Trang phục dân tộc tiêu biểu</h2>
+
+        <!-- KINH -->
+        <div class="ethnic-item">
+
+            <img src="https://images.unsplash.com/photo-1583417319070-4a69db38a482?auto=format&fit=crop&w=300&q=80"
+            class="ethnic-img">
+
+            <div class="ethnic-details">
+
+                <h3>Dân tộc Kinh (Việt)</h3>
+
+                <h4>Trang phục truyền thống: Áo Dài</h4>
+
+                <p>
+                    Áo dài là biểu tượng văn hóa tiêu biểu của người Việt Nam.
+                    Thiết kế ôm dáng kết hợp cùng chất liệu lụa mềm mại tạo nên vẻ đẹp
+                    thanh lịch và tinh tế. Áo dài xuất hiện trong lễ hội, trường học,
+                    ngoại giao và nhiều sự kiện quan trọng.
+                </p>
+
+                <span class="tag">Lụa truyền thống</span>
+                <span class="tag">Thêu tay</span>
+                <span class="tag">Biểu tượng quốc gia</span>
+
             </div>
+
         </div>
 
-        <div class="card">
-            <h2>關於我 (About)</h2>
-            <p>
-                致力於越南傳統服飾（如奧黛 Ao Dai、交領衣 Áo giao lĩnh、四身衣 Áo tứ thân 等）的歷史文獻研究、實物田野調查與數位化典藏。透過嚴謹的織品考證與現代數位建模技術，重現阮朝及更早期的越南服飾美學，期望搭建起亞洲織品文化交流的橋樑。
-            </p>
-        </div>
+        <!-- HMONG -->
+        <div class="ethnic-item">
 
-        <div class="card">
-            <h2>核心典藏與研究項目 (Featured Collections)</h2>
-            <ul class="item-list">
-                
-                <li class="item">
-                    <div class="item-icon">👘</div>
-                    <div class="item-details">
-                        <h3>阮朝宮廷服飾數位修復計畫</h3>
-                        <div class="sub-title">專案主導 / 獨立研究員</div>
-                        <div class="date">2024年 1px - 現在</div>
-                        <p>針對19世紀阮朝（Nguyen Dynasty）鳳袍與日平衣（Áo Nhật Bình）進行高解析度影像數位典藏，並運用 3D 技術重現細緻的金線刺繡與織紋結構，建立學術級數位資料庫。</p>
-                    </div>
-                </li>
+            <img src="https://images.unsplash.com/photo-1518544801976-3e159e50e5bb?auto=format&fit=crop&w=300&q=80"
+            class="ethnic-img">
 
-                <li class="item">
-                    <div class="item-icon">🍃</div>
-                    <div class="item-details">
-                        <h3>「北越四身衣」庶民服飾與常民文化田野調查</h3>
-                        <div class="sub-title">共同策展人</div>
-                        <div class="date">2023年 5月 - 2023年 12月</div>
-                        <p>深入越南北部村落，採集傳統手工植物染（如薯莨染）與織布工藝技術，收藏多件 20 世紀初期的古董四身衣（Áo tứ thân），並記錄口述歷史。</p>
-                    </div>
-                </li>
+            <div class="ethnic-details">
 
-                <li class="item">
-                    <div class="item-icon">📐</div>
-                    <div class="item-details">
-                        <h3>百年奧黛（Ao Dai）剪裁演變史文獻整理</h3>
-                        <div class="sub-title">主要發表人</div>
-                        <div class="date">2022年 1月 - 2022年 10月</div>
-                        <p>系統性梳理從 Le Mur 改良款奧黛至現代奧黛的版型演變，分析西方時尚與中國旗袍對越南傳統服飾結構的交融與影響。</p>
-                    </div>
-                </li>
+                <h3>Dân tộc H'Mông</h3>
 
-            </ul>
-        </div>
+                <h4>Trang phục truyền thống: Váy xòe batik</h4>
 
-        <div class="card">
-            <h2>專業技能 (Skills)</h2>
-            <div class="skills-container">
-                <span class="skill-tag">越南織品歷史考證</span>
-                <span class="skill-tag">數位典藏與後設資料 (Metadata)</span>
-                <span class="skill-tag">古董服飾修護與保存</span>
-                <span class="skill-tag">3D 服裝虛擬建模</span>
-                <span class="skill-tag">田野調查方法論</span>
-                <span class="skill-tag">跨文化策展</span>
+                <p>
+                    Người H'Mông nổi tiếng với nghệ thuật vẽ sáp ong và nhuộm chàm.
+                    Hoa văn hình học mang ý nghĩa tâm linh và phản ánh đời sống miền núi.
+                    Các bộ váy áo thường được làm thủ công trong nhiều tháng.
+                </p>
+
+                <span class="tag">Batik</span>
+                <span class="tag">Nhuộm chàm</span>
+                <span class="tag">Thổ cẩm</span>
+
             </div>
+
+        </div>
+
+        <!-- THAI -->
+        <div class="ethnic-item">
+
+            <img src="https://images.unsplash.com/photo-1508672019048-805c876b67e2?auto=format&fit=crop&w=300&q=80"
+            class="ethnic-img">
+
+            <div class="ethnic-details">
+
+                <h3>Dân tộc Thái</h3>
+
+                <h4>Trang phục truyền thống: Áo cóm</h4>
+
+                <p>
+                    Phụ nữ Thái thường mặc áo cóm bó sát kết hợp váy đen dài.
+                    Thiết kế đơn giản nhưng tinh tế, nhấn mạnh vẻ đẹp thanh lịch.
+                    Nghệ thuật dệt thổ cẩm của người Thái mang giá trị văn hóa cao.
+                </p>
+
+                <span class="tag">Dệt thủ công</span>
+                <span class="tag">Hoa văn cổ truyền</span>
+
+            </div>
+
+        </div>
+
+        <!-- DAO -->
+        <div class="ethnic-item">
+
+            <img src="https://images.unsplash.com/photo-1521295121783-8a321d551ad2?auto=format&fit=crop&w=300&q=80"
+            class="ethnic-img">
+
+            <div class="ethnic-details">
+
+                <h3>Dân tộc Dao Đỏ</h3>
+
+                <h4>Trang phục truyền thống: Khăn đỏ thêu tay</h4>
+
+                <p>
+                    Người Dao Đỏ gây ấn tượng với khăn đội đầu màu đỏ rực và các
+                    họa tiết thêu cầu kỳ. Trang phục thể hiện sự khéo léo và phản ánh
+                    tín ngưỡng dân gian đặc sắc của cộng đồng.
+                </p>
+
+                <span class="tag">Thêu chỉ đỏ</span>
+                <span class="tag">Trang phục nghi lễ</span>
+
+            </div>
+
         </div>
 
     </div>
+
+    <!-- CULTURE -->
+    <div class="section-card">
+
+        <h2 class="section-title">Giá trị văn hóa</h2>
+
+        <p style="line-height:1.8; color:var(--text-sub);">
+            Trang phục dân tộc không chỉ là quần áo thường ngày mà còn là biểu tượng
+            của bản sắc cộng đồng, tín ngưỡng và lịch sử dân tộc. Mỗi hoa văn,
+            màu sắc và kỹ thuật chế tác đều mang những thông điệp riêng về thiên nhiên,
+            gia đình và thế giới tâm linh.
+        </p>
+
+    </div>
+
+</div>
+
+<footer>
+    © 2026 Ethnology Connect — Digital Heritage Archive of Vietnam Ethnic Cultures
+</footer>
 
 </body>
 </html>
