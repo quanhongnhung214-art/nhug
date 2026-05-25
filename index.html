@@ -12,6 +12,11 @@
     --text-main:rgba(0,0,0,0.9);
     --text-sub:rgba(0,0,0,0.6);
     --border-light:#e0e0e0;
+    --hover:#eef3f8;
+}
+
+*{
+    box-sizing:border-box;
 }
 
 body{
@@ -24,38 +29,61 @@ body{
 /* HEADER */
 header{
     background:#fff;
-    padding:10px 0;
     border-bottom:1px solid var(--border-light);
     position:sticky;
     top:0;
     z-index:100;
 }
 
-.container{
+.navbar{
     max-width:1128px;
     margin:auto;
-    padding:0 12px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:10px 16px;
 }
 
 .logo{
-    font-size:22px;
+    font-size:24px;
     font-weight:bold;
     color:var(--linkedin-blue);
 }
 
-/* PROFILE */
+.nav-menu{
+    display:flex;
+    gap:24px;
+    color:var(--text-sub);
+    font-size:14px;
+}
+
+.nav-menu span{
+    cursor:pointer;
+}
+
+.nav-menu span:hover{
+    color:var(--linkedin-blue);
+}
+
+/* CONTAINER */
+.container{
+    max-width:1128px;
+    margin:auto;
+    padding:20px 12px;
+}
+
+/* PROFILE CARD */
 .profile-card{
     background:#fff;
-    border-radius:12px;
+    border-radius:14px;
     overflow:hidden;
-    margin-top:20px;
     border:1px solid var(--border-light);
 }
 
 .cover-photo{
-    height:240px;
+    height:320px;
     background:
-    linear-gradient(rgba(0,0,0,0.3),rgba(0,0,0,0.3)),
+    linear-gradient(rgba(0,0,0,0.25),rgba(0,0,0,0.25)),
     url('https://images.unsplash.com/photo-1528127269322-539801943592?auto=format&fit=crop&w=1400&q=80');
     background-size:cover;
     background-position:center;
@@ -63,64 +91,100 @@ header{
 
 .profile-info{
     position:relative;
-    padding:0 24px 30px;
+    padding:0 32px 32px;
 }
 
 .profile-pic{
-    width:160px;
-    height:160px;
+    width:180px;
+    height:180px;
     border-radius:50%;
-    border:5px solid white;
+    border:6px solid white;
     position:absolute;
     top:-90px;
     object-fit:cover;
+    box-shadow:0 4px 20px rgba(0,0,0,0.2);
 }
 
 .intro{
-    margin-top:90px;
+    margin-top:110px;
 }
 
 .intro h1{
     margin:0;
-    font-size:30px;
+    font-size:34px;
 }
 
 .intro p{
-    margin:6px 0;
+    margin:8px 0;
     color:var(--text-sub);
+    line-height:1.7;
 }
 
-.follow-btn{
-    margin-top:16px;
-    display:inline-block;
-    background:var(--linkedin-blue);
-    color:white;
+.action-buttons{
+    margin-top:18px;
+    display:flex;
+    gap:12px;
+}
+
+.btn{
     padding:10px 22px;
     border-radius:30px;
     text-decoration:none;
     font-weight:600;
+    transition:0.3s;
 }
 
-/* SECTIONS */
+.btn-primary{
+    background:var(--linkedin-blue);
+    color:#fff;
+}
+
+.btn-primary:hover{
+    background:#004182;
+}
+
+.btn-outline{
+    border:1px solid var(--linkedin-blue);
+    color:var(--linkedin-blue);
+}
+
+.btn-outline:hover{
+    background:#eef3f8;
+}
+
+/* SECTION */
 .section-card{
     background:#fff;
-    border-radius:12px;
+    border-radius:14px;
     border:1px solid var(--border-light);
-    padding:24px;
-    margin-top:16px;
+    padding:28px;
+    margin-top:18px;
+    transition:0.3s;
+}
+
+.section-card:hover{
+    box-shadow:0 4px 16px rgba(0,0,0,0.05);
 }
 
 .section-title{
-    font-size:24px;
-    margin-bottom:20px;
+    font-size:26px;
+    margin-bottom:24px;
 }
 
-/* ETHNIC ITEMS */
+/* ETHNIC ITEM */
 .ethnic-item{
     display:flex;
-    gap:18px;
-    padding:18px 0;
+    gap:22px;
+    padding:22px 0;
     border-bottom:1px solid var(--border-light);
+    transition:0.3s;
+}
+
+.ethnic-item:hover{
+    background:var(--hover);
+    border-radius:12px;
+    padding-left:12px;
+    padding-right:12px;
 }
 
 .ethnic-item:last-child{
@@ -128,53 +192,88 @@ header{
 }
 
 .ethnic-img{
-    width:110px;
-    height:110px;
+    width:140px;
+    height:140px;
     object-fit:cover;
-    border-radius:8px;
+    border-radius:12px;
+    transition:0.4s;
+}
+
+.ethnic-item:hover .ethnic-img{
+    transform:scale(1.03);
 }
 
 .ethnic-details h3{
     margin:0;
     color:var(--linkedin-blue);
-    font-size:20px;
+    font-size:22px;
 }
 
 .ethnic-details h4{
-    margin:6px 0;
-    font-size:15px;
+    margin:8px 0;
+    font-size:16px;
     font-weight:500;
 }
 
 .ethnic-details p{
     color:var(--text-sub);
-    line-height:1.6;
+    line-height:1.8;
     font-size:15px;
 }
 
 .tag{
     display:inline-block;
-    margin-top:8px;
+    margin-top:10px;
     margin-right:8px;
-    padding:5px 12px;
+    padding:6px 14px;
     background:#e7f3ff;
     color:var(--linkedin-blue);
-    border-radius:20px;
+    border-radius:30px;
     font-size:12px;
     font-weight:bold;
+}
+
+/* GRID */
+.stats-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+    gap:18px;
+    margin-top:18px;
+}
+
+.stat-box{
+    background:#f9fafb;
+    padding:22px;
+    border-radius:12px;
+    text-align:center;
+}
+
+.stat-box h3{
+    margin:0;
+    font-size:34px;
+    color:var(--linkedin-blue);
+}
+
+.stat-box p{
+    color:var(--text-sub);
 }
 
 /* FOOTER */
 footer{
     margin-top:40px;
     background:#fff;
-    padding:30px 0;
     border-top:1px solid var(--border-light);
     text-align:center;
+    padding:36px 20px;
     color:var(--text-sub);
 }
 
+/* MOBILE */
 @media(max-width:768px){
+
+    .nav-menu{
+        display:none;
+    }
 
     .ethnic-item{
         flex-direction:column;
@@ -182,17 +281,25 @@ footer{
 
     .ethnic-img{
         width:100%;
-        height:220px;
+        height:240px;
     }
 
     .profile-pic{
-        width:120px;
-        height:120px;
-        top:-60px;
+        width:130px;
+        height:130px;
+        top:-65px;
     }
 
     .intro{
-        margin-top:70px;
+        margin-top:80px;
+    }
+
+    .intro h1{
+        font-size:28px;
+    }
+
+    .action-buttons{
+        flex-direction:column;
     }
 }
 </style>
@@ -201,8 +308,18 @@ footer{
 <body>
 
 <header>
-    <div class="container">
+    <div class="navbar">
+
         <div class="logo">Ethnology Connect</div>
+
+        <div class="nav-menu">
+            <span>首頁</span>
+            <span>民族服飾</span>
+            <span>文化研究</span>
+            <span>數位典藏</span>
+            <span>聯絡我們</span>
+        </div>
+
     </div>
 </header>
 
@@ -215,17 +332,28 @@ footer{
 
         <div class="profile-info">
 
-            <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=500&q=80"
+            <!-- AVATAR ĐÃ ĐỔI -->
+            <img src="https://images.unsplash.com/photo-1518544801976-3e159e50e5bb?auto=format&fit=crop&w=500&q=80"
             class="profile-pic">
 
             <div class="intro">
+
                 <h1>越南54民族文化典藏庫</h1>
 
-                <p>專業研究越南傳統服飾、手工紡織藝術與民族文化認同。</p>
+                <p>
+                    致力於保存越南54民族的傳統服飾、刺繡工藝、
+                    手工紡織技術與文化身份認同。
+                </p>
 
-                <p>📍 河內 · 西北山區 · 西原高地 · 湄公河三角洲</p>
+                <p>
+                    📍 河內 · 沙壩 · 西原高地 · 湄公河三角洲
+                </p>
 
-                <a href="#" class="follow-btn">探索民族文化</a>
+                <div class="action-buttons">
+                    <a href="#" class="btn btn-primary">探索文化</a>
+                    <a href="#" class="btn btn-outline">查看典藏</a>
+                </div>
+
             </div>
 
         </div>
@@ -236,16 +364,36 @@ footer{
 
         <h2 class="section-title">專案介紹</h2>
 
-        <p style="line-height:1.8; color:var(--text-sub);">
+        <p style="line-height:1.9;color:var(--text-sub);">
             越南是一個擁有54個民族的多元文化國家，
-            每個民族皆擁有獨特的傳統服飾、紋樣設計與手工技藝。
-            本專案旨在透過數位化典藏方式，保存並推廣越南民族文化資產，
-            讓更多人認識傳統工藝與服飾背後的歷史、信仰與文化價值。
+            各民族皆保有獨特的傳統服飾與工藝技術。
+            本數位典藏平台透過影像、文字與研究資料，
+            系統化保存越南民族文化資產，
+            並推廣亞洲傳統紡織與民族藝術之美。
         </p>
+
+        <div class="stats-grid">
+
+            <div class="stat-box">
+                <h3>54</h3>
+                <p>民族文化資料</p>
+            </div>
+
+            <div class="stat-box">
+                <h3>300+</h3>
+                <p>傳統服飾典藏</p>
+            </div>
+
+            <div class="stat-box">
+                <h3>1200+</h3>
+                <p>民族影像紀錄</p>
+            </div>
+
+        </div>
 
     </div>
 
-    <!-- ETHNIC COSTUMES -->
+    <!-- COSTUME SECTION -->
     <div class="section-card">
 
         <h2 class="section-title">代表性民族服飾</h2>
@@ -253,25 +401,24 @@ footer{
         <!-- KINH -->
         <div class="ethnic-item">
 
-            <img src="https://images.unsplash.com/photo-1583417319070-4a69db38a482?auto=format&fit=crop&w=300&q=80"
+            <img src="https://images.unsplash.com/photo-1583417319070-4a69db38a482?auto=format&fit=crop&w=600&q=80"
             class="ethnic-img">
 
             <div class="ethnic-details">
 
-                <h3>京族 (Kinh / Viet)</h3>
+                <h3>京族（Kinh / Viet）</h3>
 
                 <h4>傳統服飾：奧黛（Áo Dài）</h4>
 
                 <p>
                     奧黛是越南最具代表性的民族服飾，
-                    以修身剪裁與柔滑絲綢材質聞名。
-                    其設計融合傳統與現代美學，
-                    常見於節慶、校園、外交場合與正式活動。
+                    以修身剪裁與絲綢材質聞名，
+                    展現越南女性優雅與現代美感。
                 </p>
 
                 <span class="tag">絲綢工藝</span>
                 <span class="tag">手工刺繡</span>
-                <span class="tag">國家象徵</span>
+                <span class="tag">國家文化象徵</span>
 
             </div>
 
@@ -280,51 +427,24 @@ footer{
         <!-- HMONG -->
         <div class="ethnic-item">
 
-            <img src="https://images.unsplash.com/photo-1518544801976-3e159e50e5bb?auto=format&fit=crop&w=300&q=80"
+            <img src="https://images.unsplash.com/photo-1518544801976-3e159e50e5bb?auto=format&fit=crop&w=600&q=80"
             class="ethnic-img">
 
             <div class="ethnic-details">
 
-                <h3>苗族 (H'Mông)</h3>
+                <h3>苗族（H'Mông）</h3>
 
                 <h4>傳統服飾：蠟染百褶裙</h4>
 
                 <p>
-                    苗族以蠟染技術、藍染與精細刺繡工藝聞名。
-                    服飾上的幾何圖騰與鮮豔色彩，
-                    象徵自然崇拜與民族精神，
-                    展現高山民族獨特的文化美學。
+                    苗族服飾以藍染、蠟染與鮮豔刺繡聞名，
+                    幾何圖騰象徵自然、祖先與民族精神，
+                    充分展現高山民族文化特色。
                 </p>
 
-                <span class="tag">蠟染工藝</span>
-                <span class="tag">藍染技術</span>
+                <span class="tag">蠟染藝術</span>
                 <span class="tag">民族圖騰</span>
-
-            </div>
-
-        </div>
-
-        <!-- THAI -->
-        <div class="ethnic-item">
-
-            <img src="https://images.unsplash.com/photo-1508672019048-805c876b67e2?auto=format&fit=crop&w=300&q=80"
-            class="ethnic-img">
-
-            <div class="ethnic-details">
-
-                <h3>泰族 (Thái)</h3>
-
-                <h4>傳統服飾：襟扣短衣（Áo Cóm）</h4>
-
-                <p>
-                    泰族女性常穿著貼身短衣與黑色長裙，
-                    整體風格簡潔優雅。
-                    傳統織布與手工刺繡技術，
-                    體現出泰族細膩且富有藝術感的生活文化。
-                </p>
-
-                <span class="tag">手工織布</span>
-                <span class="tag">傳統刺繡</span>
+                <span class="tag">手工紡織</span>
 
             </div>
 
@@ -333,7 +453,7 @@ footer{
         <!-- DAO -->
         <div class="ethnic-item">
 
-            <img src="https://images.unsplash.com/photo-1521295121783-8a321d551ad2?auto=format&fit=crop&w=300&q=80"
+            <img src="https://images.unsplash.com/photo-1521295121783-8a321d551ad2?auto=format&fit=crop&w=600&q=80"
             class="ethnic-img">
 
             <div class="ethnic-details">
@@ -343,14 +463,38 @@ footer{
                 <h4>傳統服飾：紅頭巾刺繡服</h4>
 
                 <p>
-                    瑤族服飾以鮮紅頭巾與繁複刺繡聞名，
-                    其圖騰與色彩設計帶有濃厚宗教與祭祀意涵。
-                    每套服飾皆需長時間手工製作，
-                    展現民族工藝的精湛技術。
+                    瑤族傳統服飾以鮮紅頭巾與繁複刺繡著稱，
+                    每套服飾皆由手工製作，
+                    反映宗教信仰與祭儀文化。
                 </p>
 
                 <span class="tag">紅色刺繡</span>
-                <span class="tag">祭儀文化</span>
+                <span class="tag">宗教文化</span>
+
+            </div>
+
+        </div>
+
+        <!-- THAI -->
+        <div class="ethnic-item">
+
+            <img src="https://images.unsplash.com/photo-1508672019048-805c876b67e2?auto=format&fit=crop&w=600&q=80"
+            class="ethnic-img">
+
+            <div class="ethnic-details">
+
+                <h3>泰族（Thái）</h3>
+
+                <h4>傳統服飾：襟扣短衣（Áo Cóm）</h4>
+
+                <p>
+                    泰族女性服飾風格優雅簡潔，
+                    擅長手工織布與傳統刺繡，
+                    體現濃厚的民族藝術氣息。
+                </p>
+
+                <span class="tag">傳統織布</span>
+                <span class="tag">文化美學</span>
 
             </div>
 
@@ -361,13 +505,14 @@ footer{
     <!-- CULTURE -->
     <div class="section-card">
 
-        <h2 class="section-title">文化價值</h2>
+        <h2 class="section-title">文化價值與保存</h2>
 
-        <p style="line-height:1.8; color:var(--text-sub);">
+        <p style="line-height:1.9;color:var(--text-sub);">
             民族服飾不只是日常穿著，
-            更是族群身份、歷史記憶與文化精神的重要象徵。
-            每一種顏色、紋樣與製作技法，
-            都承載著對自然、祖先與傳統信仰的深刻意義。
+            更承載歷史記憶、族群身份與精神信仰。
+            本平台希望透過數位保存與文化研究，
+            讓更多年輕世代認識越南傳統藝術，
+            並推動亞洲民族文化永續傳承。
         </p>
 
     </div>
@@ -375,7 +520,7 @@ footer{
 </div>
 
 <footer>
-    © 2026 Ethnology Connect — 越南民族文化數位典藏計畫
+    © 2026 Ethnology Connect — 越南民族文化數位典藏平台
 </footer>
 
 </body>
